@@ -1,0 +1,16 @@
+<%- include("includes/head.ejs") %>
+    <link rel="stylesheet" href="/css/users.css" />
+    <script src="/script/users.js" defer></script>
+  </head>
+  <body>
+    <h1>Pretty h1 for the prettiest website of all!</h1>
+    <% if (users.length) { %>
+        <ul>
+            <% for (let user of users) { %>
+                <li><%= user.name %></li>
+            <% } %>
+        </ul>
+    <%}else { %>
+        <h1>No Users Yet</h1>
+    <% }%>
+    <%- include("includes/end.ejs") %>

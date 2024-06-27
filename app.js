@@ -1,23 +1,18 @@
 const path = require("path");
 const bodyParser = require("body-parser");
 
-const userRoutes = require("./routes/usersRoutes");
+const userRoutes = require("./routes");
 
 const express = require("express");
 
 const app = express();
 
+app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(userRoutes);
 
-// app.use("/users", (req, res, next) => {
-//   res.send("<h1>Welcome to '/users' my man!</h1>");
-// });
-
-// app.use("/", (req, res, next) => {
-//   res.send("<h1>Pretty h1 for the prettiest website of all!</h1>");
-// });
-
-app.listen(3000);
+app.listen(3000, () => {
+  console.log("Server is listening on port 3000");
+});

@@ -1,0 +1,10 @@
+<%- include("includes/head.ejs") %>
+    <script src="/script/index.js" defer></script>
+  </head>
+  <body>
+    <h1>Pretty h1 for the prettiest website of all!</h1>
+    <form action="/users" method="post">
+        <input type="text" name="name" />
+        <button type="submit">Submit</button>
+    </form>
+    <%- include("includes/end.ejs") %>
